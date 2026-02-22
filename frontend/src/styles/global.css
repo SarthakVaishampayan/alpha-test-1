@@ -1,0 +1,60 @@
+:root {
+  --bg-light: #f8f9fa;
+  --sidebar-white: #ffffff;
+  --purple-main: #8b5cf6;
+  --purple-soft: #f3efff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #f1f1f1;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+/* Sidebar Active State */
+.nav-link-active {
+  background-color: var(--purple-soft);
+  color: var(--purple-main) !important;
+  border-right: 4px solid var(--purple-main);
+}
+
+.nav-link-custom {
+  color: var(--text-muted);
+  transition: 0.2s;
+  border-right: 4px solid transparent;
+}
+
+.nav-link-custom:hover {
+  background-color: #fafafa;
+  color: var(--purple-main);
+}
+
+/* Professional Cards */
+.stat-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom Chart Container */
+.chart-container {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+}
