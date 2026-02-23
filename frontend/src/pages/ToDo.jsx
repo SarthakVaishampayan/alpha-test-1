@@ -15,8 +15,8 @@ const Todo = () => {
     try {
       const headers = { Authorization: `Bearer ${token}` };
       const [tRes, rRes] = await Promise.all([
-        fetch('${API}/api/tasks', { headers }),
-        fetch('${API}/api/reminders', { headers })
+        fetch(`${API}/api/tasks`, { headers }),
+        fetch(`${API}/api/reminders`, { headers })
       ]);
       const [tData, rData] = await Promise.all([tRes.json(), rRes.json()]);
       if (tData.success) setTasks(tData.tasks);
@@ -29,7 +29,7 @@ const Todo = () => {
   const addTask = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
-    await fetch('${API}/api/tasks', {
+    await fetch(`${API}/api/tasks`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       body: JSON.stringify({ text: input })

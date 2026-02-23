@@ -78,8 +78,8 @@ const Subjects = () => {
       try {
         const headers = { Authorization: `Bearer ${token}` };
         const [sRes, rRes] = await Promise.all([
-          fetch('${API}/api/subjects',  { headers }),
-          fetch('${API}/api/reminders', { headers }),
+          fetch(`${API}/api/subjects`,  { headers }),
+          fetch(`${API}/api/reminders`, { headers }),
         ]);
         const [sData, rData] = await Promise.all([sRes.json(), rRes.json()]);
         if (sData.success) setSubjects(sData.subjects);
@@ -98,7 +98,7 @@ const Subjects = () => {
   const handleAddSubject = async (e) => {
     e.preventDefault();
     try {
-      const res  = await fetch('${API}/api/subjects', {
+      const res  = await fetch(`${API}/api/subjects`, {
         method:  'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body:    JSON.stringify(form),

@@ -35,11 +35,11 @@ const Analytics = () => {
       const headers = { Authorization: `Bearer ${token}` };
 
       const [wRes, rRes, sRes, gwRes, hRes] = await Promise.all([
-        fetch('${API}/api/sessions/weekly-stats',  { headers }),
-        fetch('${API}/api/reminders',              { headers }),
-        fetch('${API}/api/daily-goal/streak',      { headers }),
-        fetch('${API}/api/daily-goal/weekly',      { headers }),
-        fetch('${API}/api/habits',                 { headers }),
+        fetch(`${API}/api/sessions/weekly-stats`,  { headers }),
+        fetch(`${API}/api/reminders`,              { headers }),
+        fetch(`${API}/api/daily-goal/streak`,      { headers }),
+        fetch(`${API}/api/daily-goal/weekly`,      { headers }),
+        fetch(`${API}/api/habits`,                 { headers }),
       ]);
 
       const [wData, rData, sData, gwData, hData] = await Promise.all([

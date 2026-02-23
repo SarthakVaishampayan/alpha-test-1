@@ -86,7 +86,7 @@ const GlobalTimerFinishModal = () => {
       return;
     }
     try {
-      const res = await fetch('${API}/api/sessions', {
+      const res = await fetch(`${API}/api/sessions`, {
         method:  'POST',
         headers: {
           'Content-Type': 'application/json',

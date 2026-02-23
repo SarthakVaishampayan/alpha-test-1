@@ -73,7 +73,7 @@ const StudyGoalCard = () => {
 
       const [gRes, sRes] = await Promise.all([
         fetch(`${API}/api/daily-goal/day?date=${dateStr}`, { headers }),
-        fetch('${API}/api/daily-goal/streak', { headers }),
+        fetch(`${API}/api/daily-goal/streak`, { headers }),
       ]);
 
       const [gData, sData] = await Promise.all([gRes.json(), sRes.json()]);
@@ -170,7 +170,7 @@ const StudyGoalCard = () => {
       setBusy(true);
       setLoading(true);
 
-      const res = await fetch('${API}/api/daily-goal', {
+      const res = await fetch(`${API}/api/daily-goal`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ goalSeconds: sec, targetDate: selectedDate }),

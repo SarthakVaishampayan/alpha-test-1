@@ -33,10 +33,10 @@ const Profile = () => {
         const headers = { Authorization: `Bearer ${token}` };
 
         const [wRes, tRes, hRes, rRes] = await Promise.all([
-          fetch('${API}/api/sessions/weekly-stats', { headers }),
-          fetch('${API}/api/tasks',     { headers }),
-          fetch('${API}/api/habits',    { headers }),
-          fetch('${API}/api/reminders', { headers }),
+          fetch(`${API}/api/sessions/weekly-stats`, { headers }),
+          fetch(`${API}/api/tasks`,     { headers }),
+          fetch(`${API}/api/habits`,    { headers }),
+          fetch(`${API}/api/reminders`, { headers }),
         ]);
 
         const [wData, tData, hData, rData] = await Promise.all([

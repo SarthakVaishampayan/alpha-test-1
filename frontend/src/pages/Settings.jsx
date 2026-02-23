@@ -52,7 +52,7 @@ const Settings = () => {
     if (!token) return;
     const fetchReminders = async () => {
       try {
-        const res  = await fetch('${API}/api/reminders', {
+        const res  = await fetch(`${API}/api/reminders`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -81,7 +81,7 @@ const Settings = () => {
     e.preventDefault();
     setProfileLoading(true);
     try {
-      const res  = await fetch('${API}/api/auth/update', {
+      const res  = await fetch(`${API}/api/auth/update`, {
         method:  'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ const Settings = () => {
     }
     setPwLoading(true);
     try {
-      const res  = await fetch('${API}/api/auth/change-password', {
+      const res  = await fetch(`${API}/api/auth/change-password`, {
         method:  'PATCH',
         headers: {
           'Content-Type': 'application/json',
