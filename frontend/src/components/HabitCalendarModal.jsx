@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+const API = import.meta.env.VITE_API_URL;
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTHS = [
@@ -23,7 +24,7 @@ const HabitCalendarModal = ({ habit, onClose }) => {
       setLoading(true);
       try {
         const res  = await fetch(
-          `http://localhost:5000/api/habits/${habit._id}/calendar?month=${month}&year=${year}`,
+          `${API}/api/habits/${habit._id}/calendar?month=${month}&year=${year}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const data = await res.json();

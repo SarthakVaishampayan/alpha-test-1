@@ -10,6 +10,7 @@ import Settings   from './pages/Settings';
 import Subjects   from './pages/Subjects';
 import Login      from './pages/Login';
 import Register   from './pages/Register';
+const API = import.meta.env.VITE_API_URL;
 
 import { AuthProvider, useAuth }                   from './context/AuthContext';
 import { TimerProvider, useTimer }                 from './context/TimerContext';
@@ -85,7 +86,7 @@ const GlobalTimerFinishModal = () => {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/sessions', {
+      const res = await fetch('${API}/api/sessions', {
         method:  'POST',
         headers: {
           'Content-Type': 'application/json',

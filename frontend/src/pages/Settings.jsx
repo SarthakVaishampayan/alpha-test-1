@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { useAuth } from '../context/AuthContext';
 import { useNotification } from '../context/NotificationContext';
+const API = import.meta.env.VITE_API_URL;
 import {
   Bell, Moon, Volume2, Shield, LogOut,
   Trash2, Smartphone, Mail, Key, User, Save
@@ -51,7 +52,7 @@ const Settings = () => {
     if (!token) return;
     const fetchReminders = async () => {
       try {
-        const res  = await fetch('http://localhost:5000/api/reminders', {
+        const res  = await fetch('${API}/api/reminders', {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -80,7 +81,7 @@ const Settings = () => {
     e.preventDefault();
     setProfileLoading(true);
     try {
-      const res  = await fetch('http://localhost:5000/api/auth/update', {
+      const res  = await fetch('${API}/api/auth/update', {
         method:  'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -125,7 +126,7 @@ const Settings = () => {
     }
     setPwLoading(true);
     try {
-      const res  = await fetch('http://localhost:5000/api/auth/change-password', {
+      const res  = await fetch('${API}/api/auth/change-password', {
         method:  'PATCH',
         headers: {
           'Content-Type': 'application/json',

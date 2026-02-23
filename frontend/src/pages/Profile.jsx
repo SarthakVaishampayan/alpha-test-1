@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { useAuth } from '../context/AuthContext';
 import { useNotification } from '../context/NotificationContext';
+const API = import.meta.env.VITE_API_URL;
 import {
   User, Mail, Calendar, Trophy,
   Clock, CheckSquare
@@ -32,10 +33,10 @@ const Profile = () => {
         const headers = { Authorization: `Bearer ${token}` };
 
         const [wRes, tRes, hRes, rRes] = await Promise.all([
-          fetch('http://localhost:5000/api/sessions/weekly-stats', { headers }),
-          fetch('http://localhost:5000/api/tasks',     { headers }),
-          fetch('http://localhost:5000/api/habits',    { headers }),
-          fetch('http://localhost:5000/api/reminders', { headers }),
+          fetch('${API}/api/sessions/weekly-stats', { headers }),
+          fetch('${API}/api/tasks',     { headers }),
+          fetch('${API}/api/habits',    { headers }),
+          fetch('${API}/api/reminders', { headers }),
         ]);
 
         const [wData, tData, hData, rData] = await Promise.all([
