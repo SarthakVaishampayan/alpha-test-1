@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Sidebar    from './components/Sidebar';
 import Dashboard  from './pages/Dashboard';
 import Analytics  from './pages/Analytics';
-import Todo       from './pages/Todo';
+import Todo       from './pages/ToDo';
 import Profile    from './pages/Profile';
 import Settings   from './pages/Settings';
 import Subjects   from './pages/Subjects';
